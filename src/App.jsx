@@ -9,11 +9,10 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await repo.get("/");
-        setData(response);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setError(error);
+        const result = await repo.get("/");
+        setData(result);
+      } catch (err) {
+        setError(err.message);
       }
     };
 
@@ -29,7 +28,7 @@ function App() {
         </p>
       )}
       <pre>
-        {MODE} API Working: {JSON.stringify(data, null, 2)}
+        {MODE} API Working: {data}
       </pre>
     </>
   );
