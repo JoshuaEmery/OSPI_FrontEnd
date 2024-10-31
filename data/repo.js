@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const isDev = (import.meta.env || process.env).MODE === "development";
+const isDev = import.meta.env.MODE === "development";
 const API_URL = isDev
-  ? (import.meta.env || process.env).VITE_DEV_API_URL
-  : (import.meta.env || process.env).VITE_AZURE_API_URL;
+  ? import.meta.env.VITE_DEV_API_URL
+  : import.meta.env.VITE_AZURE_API_URL;
 
 // Helper to ensure URL is properly formatted
 const formatBaseUrl = (url) => {

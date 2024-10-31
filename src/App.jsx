@@ -12,7 +12,6 @@ function App() {
         const result = await repo.get("/");
         setData(result);
         console.log("META ENV API URL:", import.meta.env.VITE_AZURE_API_URL);
-        console.log("PROCESS API URL:", process.env.VITE_AZURE_API_URL); // For debugging
       } catch (err) {
         console.error("Full error:", err); // Log the full error object
         setError(err.message);
