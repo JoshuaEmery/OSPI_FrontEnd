@@ -23,6 +23,7 @@ function App() {
 
   return (
     <>
+      <h1>OSPI Mapping Front End</h1>
       <h2>API Response:</h2>
       {error && (
         <p>
